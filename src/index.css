@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom utilities for iPhone 16 Pro Max styling */
+@layer utilities {
+  .iphone-container {
+    /* Enlarged iPhone preview: ~520px wide for clearer previews */
+    max-width: min(520px, 92vw);
+    max-height: min(calc(520px * 16 / 9), 92vh);
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  
+  .iphone-aspect {
+    aspect-ratio: 9 / 16;
+  }
+
+  /* Samsung S20 Ultra basic container and aspect */
+  .android-container {
+    max-width: min(484px, 90vw);
+    max-height: min(calc(484px * 16 / 9), 85vh);
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .android-aspect {
+    aspect-ratio: 9 / 16;
+  }
+
+  /* Simple punch-hole camera overlay for Android */
+  .android-camera-hole {
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 18px;
+    background: #000;
+    border-radius: 9999px;
+    z-index: 20;
+  }
+
+  /* Thin scrollbar for desktop chat area */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(100, 116, 139, 0.5); /* slate-500/50 */
+    border-radius: 9999px;
+  }
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 116, 139, 0.5) transparent;
+  }
+}
